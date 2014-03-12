@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Rejsekort-Reader</string>
+    <string name="action_settings">Settings</string>
+    <string name="headline_read_card">Hold dit Rejsekort foran din NFC-læser for at læse et nyt kort.</string>
+    <string name="action_dump">Dump raw data</string>
+    <string name="title_block_list">Blocks</string>
+    <string name="title_block_detail">Block Detail</string>
+    <string name="title_activity_display_travel_detail">Detaljeret information</string>
+    <string name="travel_details">Detaljeret information</string>
+    <string name="title_activity_dump_raw">DumpRaw</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="rawdump_waiting">Raw dump: waiting...</string>
+    <string name="dumpraw_sendmail">Send mail</string>
+    <string name="action_block_list">Advanced</string>
+
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="info.rejsekort.reader"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:name=".RejsekortReaderApp">
+        <activity
+            android:name="info.rejsekort.reader.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/filter_nfc" />
+        </activity>
+        <activity
+            android:name="info.rejsekort.reader.BlockListActivity"
+            android:label="@string/title_block_list"
+            android:parentActivityName="info.rejsekort.reader.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.rejsekort.reader.MainActivity" />
+        </activity>
+        <activity
+            android:name="info.rejsekort.reader.BlockDetailActivity"
+            android:label="@string/title_block_detail"
+            android:parentActivityName=".BlockListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".BlockListActivity" />
+        </activity>
+        <activity
+            android:name="info.rejsekort.reader.DisplayTravelDetailActivity"
+            android:label="@string/title_activity_display_travel_detail"
+            android:parentActivityName="info.rejsekort.reader.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.rejsekort.reader.MainActivity" />
+        </activity>
+        <activity
+            android:name="info.rejsekort.reader.DumpRaw"
+            android:label="@string/title_activity_dump_raw"
+            android:parentActivityName="info.rejsekort.reader.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.rejsekort.reader.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
